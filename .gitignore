@@ -1,0 +1,27 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+*/node_modules/
+
+# ── Environment / Secrets (NEVER push these) ──────────────────────────────────
+.env
+*/.env
+.env.local
+*/.env.local
+.env.production
+*/.env.production
+
+# ── Frontend Build Output ──────────────────────────────────────────────────────
+frontend/dist/
+frontend/.vite/
+
+# ── SQLite Database ────────────────────────────────────────────────────────────
+# Remove the next line if you want to push the seeded database
+backend/database/himbus.db
+
+# ── OS / Editor Files ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+

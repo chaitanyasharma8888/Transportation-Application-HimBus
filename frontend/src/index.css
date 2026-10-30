@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/*
+ * MUI + Tailwind v4 interop
+ * ─────────────────────────
+ * Tailwind v4 puts utilities inside @layer, so unlayered CSS (like MUI's
+ * Emotion output) can accidentally override them. The rules below patch
+ * only the specific collisions found in this codebase.
+ */
+
+/* Let form elements inherit the document font */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Tailwind v4 preflight sets `border-width: 0` on *, which collapses
+   MUI's outlined-input fieldset border. Restore it. */
+.MuiOutlinedInput-notchedOutline {
+  border-width: 1px !important;
+}
+
+/* Ensure MUI portals sit above Tailwind's z-50 */
+.MuiPopover-root,
+.MuiModal-root,
+.MuiPopper-root {
+  z-index: 1300 !important;
+}
